@@ -1,0 +1,24 @@
+Разработать проект на с#.
+Проект при компиляции должен формировать файл-библиотеку с именем lib.dll
+Namespace по умолчанию ds.test.impl
+При подключении данной библиотеки в данном Namespace должны быть доступны 1 интерфейс
+IPlugin и один класс Plugins:
+public interface IPlugin
+{
+string PluginName { get; }
+string Version { get; }
+string Description { get; }
+int Run (int input1, int input2);
+}
+
+Класс Plugins должен реализовывать интерфейс:
+interface PluginFactory
+{
+int PluginsCount { get; }
+string[] GetPluginNames { get; }
+IPlugin GetPlugin (string pluginName);
+}
+
+Метод Run должен реализовывать различные математические функции (сложение умножение и
+т.п. их количество зависит от Вашего желания помочь экипажу)
+Библиотека должна работать стабильно, должны быть реализованы все необходимые проверки.
